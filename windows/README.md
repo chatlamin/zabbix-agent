@@ -1,8 +1,11 @@
 ### Установка
-cd C:\zabbix\win64
+    cd C:\zabbix\win64
 В конфиге указываем
 
-LogFile=c:\zabbix\win64\zabbix_agentd.log
-Server=192.168.1.1
-ServerActive=192.168.1.1
-Hostname=hostname
+    LogFile=c:\zabbix\win64\zabbix_agentd.log
+    Server=192.168.1.1
+    ServerActive=192.168.1.1
+    Hostname=hostname
+#### Настройка firewall
+    Netsh Advfirewall Firewall Add Rule name="Zabbix" dir=in action=allow description="Zabbix" profile=any localport=10050 protocol=tcp
+скрипты для управления в папке scripts
