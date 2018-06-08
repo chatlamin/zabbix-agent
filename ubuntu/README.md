@@ -24,15 +24,15 @@
 #### добавляем узел сети в своем zabbix-server
 для docker контейнера  digiapulssi/docker-zabbix-agent
 
-docker run -d \
-  --restart=always \
-  --name zabbix-agent \
-  -p 10050:10050 \
-  -v /proc:/host/proc:ro \
-  -v /sys:/host/sys:ro \
-  -v /dev:/host/dev:ro \
-  -v /etc:/host/etc:ro \
-  -v /var/run/docker.sock:/host/var/run/docker.sock \
-  --env ZABBIX_SERVER=192.168.1.2 \
-  --env HOST=hostname \
-  digiapulssi/docker-zabbix-agent
+    docker run -d \
+    --restart=always \
+    --name zabbix-agent \
+    -p 10050:10050 \
+    -v /proc:/host/proc:ro \
+    -v /sys:/host/sys:ro \
+    -v /dev:/host/dev:ro \
+    -v /etc:/host/etc:ro \
+    -v /var/run/docker.sock:/host/var/run/docker.sock \
+    --env ZABBIX_SERVER=192.168.1.2 \
+    --env HOST=hostname \
+    digiapulssi/docker-zabbix-agent
