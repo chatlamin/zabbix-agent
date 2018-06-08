@@ -13,7 +13,7 @@
 #### настраиваем конфиг файл   /etc/zabbix/zabbix_agentd.conf
 
     LogFileSize=10
-    Server=192.168.1.109
+    Server=192.168.1.1
     ServerActive=192.168.1.1
     Hostname=system.hostname
 
