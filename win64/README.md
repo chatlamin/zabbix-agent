@@ -1,6 +1,6 @@
-### Установка
-    cd C:\zabbix\win64
-В конфиге указываем
+#### Установка и настройка
+mkdir c:\zabbix\win64
+
 
     LogFile=c:\zabbix\win64\zabbix_agentd.log
     Server=192.168.0.21                        
