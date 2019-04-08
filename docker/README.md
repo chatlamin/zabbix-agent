@@ -1,16 +1,14 @@
 # Zabbix Agent в Docker контейнере
 
-    docker run -d \
-      --restart=always \
-      --name zabbix-agent \
-      -p 10050:10050 \
-      -v /proc:/host/proc:ro \
-      -v /sys:/host/sys:ro \
-      -v /dev:/host/dev:ro \
-      -v /etc:/host/etc:ro \
-      -v /var/run/docker.sock:/host/var/run/docker.sock \
-      --env ZABBIX_SERVER=192.168.0.21 \
-      --env HOST=hostname \
-      digiapulssi/docker-zabbix-agent
+docker run --name zabbix-agent \
+  --detach \
+  --privileged \
+  --volume /proc:/data/proc \
+  --volume /sys:/data/sys \
+  --volume /dev:/data/dev \
+  --volume /var/run/docker.sock:/var/run/docker.sock \
+  --volume /home/docker/containers/zabbix-agent/zabbix_agentd.conf:/etc/zabbix/zabbix_agentd.conf \
+  --publish 10050:10050 \
+  zabbix/zabbix-agent:ubuntu-4.2-latest
 
-[Источник](https://github.com/digiapulssi/docker-zabbix-agent)
+[Источник](https://github.com/zabbix/zabbix-docker/tree/4.2/agent/ubuntu)
